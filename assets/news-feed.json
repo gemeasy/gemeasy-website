@@ -1,40 +1,12 @@
 {
-  "updatedAt": "2026-10-16T11:30:10.590Z",
+  "updatedAt": "2026-10-16T16:43:07.068Z",
   "articles": [
     {
-      "title": "SC clarifies stance on govt apologies in contempt proceedings",
-      "description": "The Supreme Court clarified that it was not taking cognisance of media reports suggesting government authorities tendered unconditional apologies in contempt proceedings related to restrictions during an October 10 protest. Solicitor General Tushar Mehta explained that apologies are procedural, and authorities have defended their actions, citing reasons like maintaining public order and intelligence inputs. The court emphasised that media coverage was not relevant to its proceedings.",
-      "url": "https://www.rediff.com/news/report/sc-clarifies-stance-on-govt-apologies-in-contempt-proceedings/20261016.htm",
-      "source": "Rediff",
-      "publishedAt": "2026-10-15 20:02:39"
-    },
-    {
-      "title": "Ramlila Maidan among spots for which police issued surveillance camera tender in July",
-      "description": "Nearly two and a half months before Delhi Police denotified Jantar Mantar as a protest site and designated three new protest venues — Ramlila Maidan, Burari Ground in north Delhi, and CBD Ground in east Delhi — it had issued a tender for 338 cameras, including facial recognition models, to be installed across central and New Delhi districts. The VVIP gate of Ramlila Maidan was one of the spots covered by the tender, worth ₹15.66 crore, with others including Turkman Gate, Delhi Gate, Raj Ghat, the India Gate C-Hexagon, Mandi House and Patiala House.",
-      "url": "https://www.thehindu.com/news/cities/Delhi/ramlila-maidan-among-spots-for-which-police-issued-surveillance-camera-tender-in-july/article71589920.ece",
-      "source": "The Hindu",
-      "publishedAt": "2026-10-15 19:53:09"
-    },
-    {
-      "title": "Locked Office, No Production Facility: Former BDL CMD’s Family Firm Emerges as Sole Bidder for ₹56.8 Crore Missile Tender from the Same PSU",
-      "description": "They say PSU CMDs never retire. Some join the private sector with or without completing cooling-off periods, while others become entrepreneurs. But this is the true story of the “More than Dynamic” former CMD of Bharat Dynamics Limited. Locked office. No manufacturing assets on the balance sheet. And a ₹56.8-crore missile equipment tender from the … The post Locked Office, No Production Facility: Former BDL CMD’s Family Firm Emerges as Sole Bidder for ₹56.8 Crore Missile Tender from the Same PSU appeared first on Indian PSU | Public Sector Undertaking News.",
-      "url": "https://indianpsu.com/bdl-aindri-defence-single-tender-controversy/",
-      "source": "Indian Psu | Public Sector Undertaking News",
-      "publishedAt": "2026-10-15 19:01:04"
-    },
-    {
-      "title": "APSRTC employees’ JAC seeks cancellation of tenders to operate 1,450 electric buses by private parties",
-      "description": "APSRTC employees’ JAC demands cancellation of private tenders to run 1,450 electric buses, threatens protests and job-security assurances.",
-      "url": "https://www.thehindu.com/news/national/andhra-pradesh/apsrtc-employees-jac-seeks-cancellation-of-tenders-to-operate-1450-electric-buses-by-private-parties/article71589122.ece",
-      "source": "The Hindu",
-      "publishedAt": "2026-10-15 17:42:47"
-    },
-    {
-      "title": "HC declines to halt govt tender, rejects Sushee Infra’s plea",
-      "description": "HC declines to halt govt tender, rejects Sushee Infra’s plea",
-      "url": "https://timesofindia.indiatimes.com/city/hyderabad/hc-declines-to-halt-govt-tender-rejects-sushee-infras-plea/articleshow/134973130.cms",
-      "source": "The Times Of India",
-      "publishedAt": "2026-10-15 17:19:08"
+      "title": "RTC staff seeks cancellation of tenders for 1,450 electric buses",
+      "description": "APSRTC JAC leaders submitted a memorandum demanding the immediate cancellation of e-tenders for operating 1,450 electric buses under the GCC model.",
+      "url": "https://www.thehansindia.com/news/cities/vijayawada/rtc-staff-seeks-cancellation-of-tenders-for-1450-electric-buses-1132897",
+      "source": "The Hans India",
+      "publishedAt": "2026-10-15 23:38:30"
     },
     {
       "title": "Hyderabad defence firm gets Rs 56.8Cr BDL single tender",
@@ -63,6 +35,20 @@
       "url": "https://www.financialexpress.com/india-news/httpsindianexpress-comarticleexpress-exclusivebdl-single-tender-optical-sights-aindri-defence-siddharth-mishra-10922221/4361721/",
       "source": "Financial Express , Read To Lead",
       "publishedAt": "2026-10-15 04:48:39"
+    },
+    {
+      "title": "783 Cooperatives Register as Buyers on GeM Portal",
+      "description": "A total of 783 cooperative societies have registered as buyers on the Government e-Marketplace (GeM) portal, gaining access to goods and services offered by approximately 10.25 lakh vendors. The initiative aims to promote transparent, affordable and efficient procurement in the cooperative sector, enabling societies to source products and services through a digital marketplace. The move […]",
+      "url": "https://www.indiancooperative.com/co-op-news-snippets/783-cooperatives-register-as-buyers-on-gem-portal/",
+      "source": "Indian Cooperative | News Exclusicely From The Coo",
+      "publishedAt": "2026-10-15 02:39:26"
+    },
+    {
+      "title": "For missile accessory supply, defence PSU picks only one firm – set up by ex-CMD, wife",
+      "description": "Bharat Dynamics cited ‘urgency’ to justify the single tender to Aindri Defence Advisory; the firm then cleared the technical stage and bid Rs 56.8 cr, with a financial evaluation now underway.",
+      "url": "https://indianexpress.com/article/express-exclusive/bdl-single-tender-optical-sights-aindri-defence-siddharth-mishra-10922221/",
+      "source": "The Indian Express",
+      "publishedAt": "2026-10-15 01:08:37"
     }
   ]
 }
