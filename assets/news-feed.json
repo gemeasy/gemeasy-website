@@ -1,6 +1,27 @@
 {
-  "updatedAt": "2026-10-17T04:34:17.911Z",
+  "updatedAt": "2026-10-17T10:50:08.969Z",
   "articles": [
+    {
+      "title": "CBI searches 4 manpower firms over alleged hiring, pay irregularities",
+      "description": "CBI raids 4 Chandigarh manpower firms over alleged outsourcing tender, hiring and salary irregularities; probe examines GeM contracts and possible official role.",
+      "url": "https://timesofindia.indiatimes.com/city/chandigarh/cbi-searches-4-manpower-firms-over-alleged-hiring-pay-irregularities/articleshow/135003038.cms",
+      "source": "The Times Of India",
+      "publishedAt": "2026-10-16 19:26:50"
+    },
+    {
+      "title": "India sets zero sugar diversion for ethanol in 2026/27 tender",
+      "description": "India has relied for years on surplus sugar to meet its ethanol-blending targets, but the exclusion of sugar-based feedstocks underscores the growing tension between cutting oil imports and protecting domestic sugar supplies, as poor rainfall threatens output and pushes prices to record highs.",
+      "url": "https://www.cnbctv18.com/agriculture/india-sets-zero-sugar-diversion-for-ethanol-in-2026-27-tender-20013954.htm",
+      "source": "Cnbctv18",
+      "publishedAt": "2026-10-16 16:57:01"
+    },
+    {
+      "title": "ESY 2026-27: OMCs invite bids for around 1100 crore litres of ethanol; Sugarcane Juice and B-Heavy Molasses excluded",
+      "description": "The Oil Marketing Companies (OMCs) have invited bids for the supply of around 1100 crore litres of Denatured Anhydrous Ethanol for cycle 1 of Ethanol Supply Year (ESY) 2026-27. As per the tender document, the government has issued directions that sugar diversion for ethanol be reduced to zero for ESY 2026-27. Thus, no offers have […] ChiniMandi",
+      "url": "https://www.chinimandi.com/esy-2026-27-omcs-invite-bids-for-around-1100-crore-litres-of-ethanol-sugarcane-juice-and-b-heavy-molasses-excluded/",
+      "source": "Chinimandi",
+      "publishedAt": "2026-10-16 16:35:20"
+    },
     {
       "title": "Centre sets sugar diversion for ethanol at zero in 2026-27 tender",
       "description": "India has directed oil marketing companies to exclude sugar-based ethanol from the 2026-27 tender, setting sugar diversion at zero amid concerns over domestic sugar supplies and record-high prices.",
@@ -9,60 +30,11 @@
       "publishedAt": "2026-10-16 15:53:23"
     },
     {
-      "title": "India orders zero sugar diversion for ethanol in 2026-27 as prices hit record highs",
-      "description": "India has excluded sugarcane juice, sugar syrup and B-heavy molasses from its 2026-27 ethanol tender, seeking 11 billion litres from suppliers as record sugar prices raise supply concerns.",
-      "url": "https://www.moneycontrol.com/news/business/india-orders-zero-sugar-diversion-for-ethanol-in-2026-27-as-prices-hit-record-highs-14054168.html",
-      "source": "Moneycontrol",
-      "publishedAt": "2026-10-16 15:49:27"
-    },
-    {
-      "title": "India sets zero sugar diversion for ethanol in 2026/27 tender",
-      "description": "India has instructed oil marketing companies to cease sugar diversion for ethanol production by the year 2026-27. This decision arises amid rising sugar prices and concerns over domestic sugar supply due to poor rainfall. Ethanol from sugarcane juice and other sugar-based feedstocks will not be included in the latest tender. The government aims to boost domestic sugar production and curb oil imports as part of its policies.",
-      "url": "https://economictimes.indiatimes.com/industry/renewables/india-sets-zero-sugar-diversion-for-ethanol-in-2026/27-tender/articleshow/134998525.cms",
-      "source": "The Economic Times",
-      "publishedAt": "2026-10-16 15:39:56"
-    },
-    {
-      "title": "LCC Projects Limited",
-      "description": "LCC Projects Limited has informed the Exchange about receipt of Acceptance of Tender (AOT) from the office of Executive Engineer,…",
-      "url": "https://www.thetimesofbengal.com/financial/lcc-projects-limited/",
-      "source": "The Times Of Bengal",
-      "publishedAt": "2026-10-16 14:35:50"
-    },
-    {
-      "title": "DGDE issue Tender for Development of Solar Power Plant at Military Dairy Farm, Pimpri, Pune – EQ",
-      "description": "Summary: — ## 1. Key Tender Facts (Business Snapshot) | Parameter | Detail | |—|—| | **Project** | 20 MW Solar Power Plant, Military Dairy Farm, Pimpri, Pune | | **Project Site** | ~100 acres (Figure 1, Schedule A) | | **Model** | Design, Build, Finance, Operate, Maintain & Transfer (DBFOMT) | | **Concession Period** […]",
-      "url": "https://www.eqmagpro.com/dgde-issue-tender-for-development-of-solar-power-plant-at-military-dairy-farm-pimpri-pune-eq/",
-      "source": "Eqmagpro",
-      "publishedAt": "2026-10-16 13:52:34"
-    },
-    {
-      "title": "IPO-bound OfBusiness' BidAssist sees rising SME activity in tier-II, tier-III cities",
-      "description": "More than 60 percent of BidAssist’s 1.7 million users are from tier-II and tier-III cities, as tender activity picks up in civil and road construction.",
-      "url": "https://www.moneycontrol.com/news/business/startup/ipo-bound-ofbusiness-bidassist-sees-rising-sme-activity-in-smaller-towns-14054095.html",
-      "source": "Moneycontrol",
-      "publishedAt": "2026-10-16 13:49:04"
-    },
-    {
-      "title": "MES issue Tender for Provn of Roof Top Solar Plant on Misc Bldgs in Pokaran Mil Stn – EQ",
-      "description": "Summary: — ## 1. Key Tender Facts | Parameter | Detail | |—|—| | **Job No.** | 03/LBW/POKARAN/2025-26/Q | | **Name of Work** | Provision of Rooftop Solar Plant on Misc Buildings, Pokaran Mil Stn | | **Estimated Cost** | ₹33.25 Lakhs (At Par Market, Approximate) | | **Completion Period** | 180 days from date […]",
-      "url": "https://www.eqmagpro.com/mes-issue-tender-for-provn-of-roof-top-solar-plant-on-misc-bldgs-in-pokaran-mil-stn-eq/",
-      "source": "Eqmagpro",
-      "publishedAt": "2026-10-16 13:42:05"
-    },
-    {
       "title": "Hyderabad defence firm gets Rs 56.8Cr BDL single tender",
       "description": "Hyderabad: Bharat Dynamics Limited (BDL), a Hyderabad-based defence Public Sector Undertaking (PSU), issued an ‘urgent’ single tender to a private company, Indian Express has reported. The private company, Aindri Defence Advisory Private Limited, is run by Siddharth Mishra, who was BDL’s former chairman and managing director. Mishra set up the company in 2024, seven months … Get the latest updates in Hyderabad City News, Technology, Entertainment, Sports, Politics and Top Stories on WhatsApp & Telegram by subscribing to our channels. You can also download our app for Android and iOS.",
       "url": "https://www.siasat.com/hyderabad-defence-firm-gets-rs-56-8cr-bdl-single-tender-3558809/",
       "source": "Siasat.com",
       "publishedAt": "2026-10-15 16:13:11"
-    },
-    {
-      "title": "Women own 38 pc of registered MSMEs with 3.69 crore enterprises, labour force participation surge",
-      "description": "New Delhi, Oct 15 (IANS) About 3.69 crore registered MSMEs were women‑owned, representing about 38 per cent of all registrations, an official factsheet said on Thursday. The women's labour force participation rate (LFPR) for those aged 15 and above rose from 23.3 per cent in 2017‑18 to 40 per cent in 2025. Over 1.07 lakh recognised startups had at least one woman director or partner and these accounted for approximately 48 per cent of all recognised startups. In absolute terms, an estimated 20 crore women aged 15 years and above were employed in India during 2025. Custom Ad: Multiplex “This broader transition is being supported through policies that expand women’s access to safer workplaces, social protection, entrepreneurship, formalisation and financial opportunities,” the statement noted. Worker Population Ratio (WPR) increased from 22 per cent for women in 2017-18 to 38.8 per cent in 2025. In absolute terms, an estimated 20 crore women aged 15 years and above were employed in India during 2025. Women constitute nearly 70 per cent of the direct workforce in mobile phone manufacturing as of July 2026. Across the wider electronics manufacturing sector, women account for nearly 30 per cent of the workforce created over the last decade. “Formal recognition, finance and market access provide key areas for strengthening women-led enterprises,” the statement noted. Swavalamban Scheme supports young women from business ideation to enterprise creation through entrepreneurship training, finance and market guidance, and legal support. Selected participants also receive 21 weeks of mentorship and handholding to help develop sustainable enterprises. The Yashasvini Campaign promoted greater participation of women in entrepreneurship by achieving gender parity on the Udyam Registration Portal and Udyam Assist Platform by 2029. The Yashasvini Campaign had facilitated over 22 lakh women-owned MSME registrations as of July 2026. Further, total procurement from women-owned MSEs was 3.8 per cent in FY26, exceeding the 3 per cent public procurement target. —IANS aar/ag",
-      "url": "https://www.thehawk.in/news/economy-and-business/women-own-38-pc-of-registered-msmes-with-369-crore-enterprises-labour-force-participation-surge",
-      "source": "Thehawk",
-      "publishedAt": "2026-10-15 08:56:28"
     }
   ]
 }
