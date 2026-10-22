@@ -1,19 +1,26 @@
 {
-  "updatedAt": "2026-10-22T11:59:06.652Z",
+  "updatedAt": "2026-10-22T17:14:59.934Z",
   "articles": [
+    {
+      "title": "TVK govt junks tender for training campus in Chennai",
+      "description": "The cancellation comes after the TVK government's reported decision to review tenders finalised during the last six months of the previous regime.",
+      "url": "https://www.dtnext.in/news/tamilnadu/tvk-govt-junks-tender-for-training-campus-in-chennai",
+      "source": "Dt Next",
+      "publishedAt": "2026-10-22 02:13:09"
+    },
+    {
+      "title": "Toxic froth returns to Yamuna, AAP alleges tender irregularities in anti-froth drive",
+      "description": "AAP Delhi chief Saurabh Bharadwaj said the tendering process for treating the Yamuna Froth near Kalindi Kunj was still underway and the financial bid had not yet been opened.",
+      "url": "https://www.hindustantimes.com/cities/delhi-news/toxic-froth-returns-to-yamuna-aap-alleges-tender-irregularities-in-anti-froth-drive-101792605972078.html",
+      "source": "Hindustan Times",
+      "publishedAt": "2026-10-22 02:03:40"
+    },
     {
       "title": "Coal Controller Organisation Recognized for Mine Land Repurposing Tool",
       "description": "The Coal Controller Organisation has received a national award for its SUVIKALP tool, designed to assist in the sustainable repurposing of post-mining land.",
       "url": "https://indiadailymail.com/coal-controller-organisation-recognized-for-mine-land-repurposing-tool/",
       "source": "India Daily Mail",
       "publishedAt": "2026-10-21 21:27:26"
-    },
-    {
-      "title": "‘De-foamers installed before tender process’: AAP alleges graft in DJB ahead of Chhath Puja",
-      "description": "AAP alleges pre-tender corruption in DJB over Yamuna defoaming chemicals ahead of Chhath Puja.",
-      "url": "https://www.thehindu.com/news/cities/Delhi/de-foamers-installed-before-tender-process-aap-alleges-graft-in-djb-ahead-of-chhath-puja/article71608897.ece",
-      "source": "The Hindu",
-      "publishedAt": "2026-10-21 18:50:19"
     }
   ]
 }
