@@ -39,7 +39,7 @@ Last updated: 16 July 2026
 
 - Address: Ground Floor, Adison Arcade LG-11, Fraser Road, opposite Doordarshan, Patna, Bihar 800001, India
 - Phone: +91 79704 63729
-- Email: info@gemeasy.in
+- Email: gemeasy25@gmail.com
 
 ## Protected configuration
 
