@@ -1,10 +1,10 @@
 (() => {
   const asset = 'assets/gemeasy-cta-mascot.webp';
   const anchors = document.querySelectorAll('.button-nav, .nav-cta, main .button-primary, footer .button-primary, main #contactForm button[type="submit"]');
-  function mascot(className) {
+  function mascot(className, source = asset) {
     const image = document.createElement('img');
     image.className = className;
-    image.src = asset;
+    image.src = source;
     image.alt = '';
     image.setAttribute('aria-hidden', 'true');
     return image;
@@ -20,7 +20,7 @@
   const rover = document.createElement('span');
   rover.className = 'roaming-mascot';
   rover.setAttribute('aria-hidden', 'true');
-  rover.append(mascot('roaming-mascot-image'));
+  rover.append(mascot('roaming-mascot-image'), mascot('ruby-mascot', 'assets/gemeasy-ruby-mascot.webp'));
   document.body.append(rover);
   const toggle = document.createElement('button');
   toggle.type = 'button';
@@ -41,7 +41,7 @@
     label();
   });
   rover.addEventListener('animationend', event => {
-    if (!event.pseudoElement) rover.classList.remove('is-playing');
+    if (event.target === rover && !event.pseudoElement) rover.classList.remove('is-playing');
   });
   const moves = [
     ['run', 'right'],

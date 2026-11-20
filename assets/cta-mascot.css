@@ -87,3 +87,40 @@
   78% { transform:translate(-4px,-30px); }
 }
 @media(prefers-reduced-motion:reduce) { .roaming-mascot,.mascot-motion-toggle { display:none; } }
+
+.roaming-mascot .ruby-mascot {
+  position:absolute;
+  top:5%;
+  right:68%;
+  width:87%;
+  height:87%;
+  transform-origin:center bottom;
+}
+.roaming-mascot[data-corner="left"] .ruby-mascot { right:auto; left:68%; }
+@media(prefers-reduced-motion:no-preference) {
+  .roaming-mascot.is-playing .ruby-mascot { animation:gem-ruby-chase 3.5s ease-in-out both; }
+  .roaming-mascot.is-playing:is([data-move="burst"],[data-move="peek"]) .ruby-mascot {
+    animation-name:gem-ruby-greet-left;
+  }
+  .roaming-mascot.is-playing:is([data-move="hop"],[data-move="float"],[data-move="spin"]) .ruby-mascot {
+    animation-name:gem-ruby-greet-right;
+  }
+}
+@keyframes gem-ruby-chase {
+  0%,100% { opacity:0; transform:translate(25px,12px) rotate(8deg); }
+  19%,83% { opacity:1; }
+  32%,68% { transform:translate(-10px,-7px) rotate(-12deg); }
+  48%,79% { transform:translate(3px,2px) rotate(9deg); }
+}
+@keyframes gem-ruby-greet-left {
+  0%,100% { opacity:0; transform:translate(22px,14px) rotate(12deg); }
+  20%,83% { opacity:1; }
+  42%,57% { transform:translate(-17%,-19%) rotate(-13deg); }
+  72% { transform:translate(8px,0) rotate(11deg); }
+}
+@keyframes gem-ruby-greet-right {
+  0%,100% { opacity:0; transform:translate(-17px,14px) rotate(-12deg); }
+  20%,83% { opacity:1; }
+  42%,57% { transform:translate(17%,-19%) rotate(13deg); }
+  72% { transform:translate(-8px,0) rotate(-11deg); }
+}
