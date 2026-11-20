@@ -1,193 +1,160 @@
-.mascot-anchor { position:relative; isolation:isolate; }
-.cta-mascot {
-  position:absolute; z-index:2; top:-21px; right:-8px; width:36px; height:32px;
-  object-fit:contain; pointer-events:none; transform-origin:70% 85%;
-  filter:drop-shadow(0 3px 5px #091d5280);
-}
-:is(.button-nav,.nav-cta) .cta-mascot { top:-15px; right:-6px; width:29px; height:27px; }
 .roaming-mascot {
   position:fixed; z-index:9; bottom:max(18px,env(safe-area-inset-bottom)); right:max(15px,env(safe-area-inset-right));
   width:clamp(54px,9vw,90px); aspect-ratio:1;
   pointer-events:none; opacity:0; filter:drop-shadow(0 7px 10px #061d536b);
 }
-.roaming-mascot[data-corner="left"] { right:auto; left:max(15px,env(safe-area-inset-left)); }
 .roaming-mascot img { display:block; width:100%; height:100%; object-fit:contain; }
-.roaming-mascot[data-corner="high"] { bottom:24vh; }
 .mascot-motion-toggle {
   background:none; border:0; padding:5px 0; color:inherit; cursor:pointer; font:inherit;
   text-decoration:underline; text-underline-offset:3px;
 }
-.sapphire-bull { position:relative; display:block; width:100%; height:100%; }
-.roaming-mascot .sapphire-bull img { position:absolute; inset:0; }
-.roaming-mascot .natural-bull { opacity:0; }
-.roaming-mascot .ruby-mascot {
-  position:absolute; top:0; right:86%; width:100%; height:100%;
+.roaming-mascot {
+  perspective:500px;
 }
-.roaming-mascot[data-corner="left"] .ruby-mascot { right:auto; left:86%; }
-.roaming-mascot :is(.sapphire-bull,.ruby-mascot) { transform-origin:50% 88%; }
-.roaming-mascot[data-corner="right"] .sapphire-bull,
-.roaming-mascot[data-corner="left"] .ruby-mascot { scale:-1 1; }
-.roaming-mascot[data-move="charge"] .ruby-mascot { scale:-1 1; }
-
-@media(prefers-reduced-motion:no-preference) {
-  .cta-mascot { transition:transform .27s ease; }
-  .mascot-anchor:is(:hover,:focus-within) .cta-mascot { transform:translate(-4px,-4px) rotate(-11deg); }
-  .roaming-mascot.is-playing { animation:gem-bull-visit 3.5s ease-in-out both; }
-  .roaming-mascot.is-playing[data-move="charge"] { animation-name:gem-bull-charge; }
-  .roaming-mascot.is-playing[data-move="transform"] .natural-bull { animation:gem-bull-natural 3.5s linear both; }
-  .roaming-mascot.is-playing[data-move="transform"] .robot-bull { animation:gem-bull-armor 3.5s linear both; }
-  .roaming-mascot.is-playing[data-move="transform"] .sapphire-bull::after {
-    content:""; position:absolute; inset-inline:3%; top:12%; height:2px;
-    background:#b5f5ff; box-shadow:0 0 10px 3px #49c5ff;
-    animation:gem-bull-scan 3.5s linear both;
-  }
-  .roaming-mascot.is-playing[data-move="scrape"] .sapphire-bull { animation:gem-bull-scrape 3.5s ease both; }
-  .roaming-mascot.is-playing[data-move="toss"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-toss 3.5s ease both; }
-  .roaming-mascot.is-playing[data-move="charge"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-gallop .48s ease-in-out infinite; }
-  .roaming-mascot.is-playing[data-move="face-off"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-face-off 3.5s ease both; }
-  .roaming-mascot.is-playing[data-move="buck"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-buck 3.5s ease both; }
-  .roaming-mascot.is-playing:is([data-move="toss"],[data-move="buck"]) .ruby-mascot { animation-delay:.22s; }
+.robot-monkey {
+  transform-origin:center 85%;
 }
-@media(prefers-reduced-motion:reduce) { .roaming-mascot,.mascot-motion-toggle { display:none; } }
-
-@keyframes gem-bull-visit {
-  0%,100% { opacity:0; transform:translateY(16px); }
-  12%,88% { opacity:1; transform:none; }
+.roaming-mascot[data-move="perch"] {
+  right:auto;
+  bottom:auto;
+  left:var(--perch-x, 20px);
+  top:var(--perch-y, max(145px, 29vh));
+  translate:0 -100%;
 }
-@keyframes gem-bull-natural {
-  0%,28% { opacity:1; clip-path:inset(0); }
-  60%,100% { opacity:1; clip-path:inset(100% 0 0); }
+@media (prefers-reduced-motion:no-preference) {
+  .roaming-mascot.is-playing { animation:gem-monkey-visit 3.5s both; }
+  .roaming-mascot.is-playing .robot-monkey { animation:var(--monkey-move) 3.5s ease-in-out both; }
+  [data-move="perch"] { --monkey-move:gem-monkey-perch; }
+  [data-move="swing"] { --monkey-move:gem-monkey-swing; }
+  [data-move="rock"] { --monkey-move:gem-monkey-rock; }
+  [data-move="hop"] { --monkey-move:gem-monkey-hop; }
+  [data-move="peek"] { --monkey-move:gem-monkey-peek; }
+  [data-move="backflip"] { --monkey-move:gem-monkey-backflip; }
+  [data-move="cartwheel"] { --monkey-move:gem-monkey-cartwheel; }
+  [data-move="slide"] { --monkey-move:gem-monkey-slide; }
+  [data-move="bounce"] { --monkey-move:gem-monkey-bounce; }
+  [data-move="nod"] { --monkey-move:gem-monkey-nod; }
+  [data-move="stretch"] { --monkey-move:gem-monkey-stretch; }
+  [data-move="twirl"] { --monkey-move:gem-monkey-twirl; }
+  [data-move="tiptoe"] { --monkey-move:gem-monkey-tiptoe; }
+  [data-move="pose"] { --monkey-move:gem-monkey-pose; }
+  [data-move="nap"] { --monkey-move:gem-monkey-nap; }
 }
-@keyframes gem-bull-armor {
-  0%,28% { clip-path:inset(0 0 100%); }
-  60%,100% { clip-path:inset(0); }
-  63% { filter:drop-shadow(0 0 6px #75dbff); }
-  80% { filter:none; }
+@media (prefers-reduced-motion:reduce) {
+  .roaming-mascot,.mascot-motion-toggle { display:none; }
 }
-@keyframes gem-bull-scan {
-  0%,28% { opacity:0; top:0; }
-  32% { opacity:1; }
-  58% { opacity:1; }
-  60%,100% { opacity:0; top:100%; }
-}
-@keyframes gem-bull-scrape {
-  26%,43%,58% { transform:translateX(5%) rotate(9deg) scaleY(.92); }
-  34%,50%,65% { transform:translateX(-5%) rotate(3deg); }
-  80% { transform:none; }
-}
-@keyframes gem-bull-toss {
-  30%,56% { transform:rotate(13deg) scaleY(.94); }
-  39%,65% { transform:rotate(-17deg) scaleY(1.05); }
-  78% { transform:none; }
-}
-@keyframes gem-bull-charge {
-  0% { opacity:0; transform:translateX(82%); }
-  16%,83% { opacity:1; }
-  100% { opacity:0; transform:translateX(calc(-58vw + 30px)); }
-}
-@keyframes gem-bull-gallop {
-  25% { transform:translateY(-11%) rotate(-8deg); }
-  65% { transform:rotate(6deg) scaleY(.91); }
-}
-@keyframes gem-bull-face-off {
-  32% { transform:rotate(9deg) scaleY(.94); }
-  45%,56% { transform:translateX(6%) rotate(12deg); }
-  64% { transform:translateX(-8%) rotate(-5deg); }
-  80% { transform:none; }
-}
-@keyframes gem-bull-buck {
-  29% { transform:rotate(12deg) scaleY(.9); }
-  40% { transform:translateY(-26%) rotate(-16deg); }
-  53% { transform:translateY(-9%) rotate(15deg); }
-  65% { transform:scaleY(.9); }
-  77% { transform:none; }
-}
-
-.roaming-mascot[data-corner="center"] {
-  right:50%;
-  margin-right:calc(-1 * clamp(54px,9vw,90px));
-}
-.roaming-mascot[data-move="clash"] .sapphire-bull { scale:-1 1; }
-.roaming-mascot[data-move="clash"] .ruby-mascot { right:100%; }
-@media(prefers-reduced-motion:no-preference) {
-  .roaming-mascot.is-playing[data-move="clash"] .sapphire-bull { animation:gem-bull-clash-right 3.5s both; }
-  .roaming-mascot.is-playing[data-move="clash"] .ruby-mascot { animation:gem-bull-clash-left 3.5s both; }
-  .roaming-mascot.is-playing[data-move="clash"]::after {
-    content:""; position:absolute; inset:22% auto auto -2px; width:4px; height:4px;
-    border-radius:50%; background:#fff;
-    box-shadow:0 0 12px 4px #ffc571, -8px -7px 0 #ffd789, 6px -11px 0 #fff, 8px 6px 0 #ffc571;
-    animation:gem-bull-impact 3.5s both;
-  }
-  .roaming-mascot.is-playing[data-move="stomp"] .sapphire-bull { animation:gem-bull-stomp 3.5s both; }
-  .roaming-mascot.is-playing[data-move="snort"] .sapphire-bull { animation:gem-bull-snort 3.5s both; }
-  .roaming-mascot.is-playing[data-move="sidestep"] .ruby-mascot { animation:gem-bull-sidestep 3.5s both; }
-  .roaming-mascot.is-playing[data-move="rear"] .sapphire-bull { animation:gem-bull-rear 3.5s both; }
-  .roaming-mascot.is-playing[data-move="parade"] { animation-name:gem-bull-parade; }
-  .roaming-mascot.is-playing[data-move="parade"] .ruby-mascot { scale:-1 1; }
-  .roaming-mascot.is-playing[data-move="feint"] .ruby-mascot { animation:gem-bull-feint 3.5s both; }
-  .roaming-mascot.is-playing[data-move="bow"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-bow 3.5s both; }
-  .roaming-mascot.is-playing[data-move="recoil"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-recoil 3.5s both; }
-}
-@keyframes gem-bull-clash-right {
-  0%,15% { transform:translateX(-48vw); }
-  48% { transform:translateX(-2%); }
-  54%,62% { transform:translateX(9%) rotate(7deg); }
-  70%,100% { transform:translateX(-35%) rotate(-5deg); }
-}
-@keyframes gem-bull-clash-left {
-  0%,15% { transform:translateX(-48vw); }
-  48% { transform:translateX(2%); }
-  54%,62% { transform:translateX(-9%) rotate(7deg); }
-  70%,100% { transform:translateX(-35%) rotate(-5deg); }
-}
-@keyframes gem-bull-impact {
-  0%,46%,65%,100% { opacity:0; transform:scale(.5); }
-  51% { opacity:1; transform:scale(1.5); }
-}
-@keyframes gem-bull-stomp {
-  33% { transform:translateY(-7%) rotate(-9deg); }
-  40% { transform:scaleY(.85); }
-  44%,54% { transform:translateX(3%); }
-  49% { transform:translateX(-3%); }
-  63% { transform:none; }
-}
-@keyframes gem-bull-snort {
-  28%,58% { transform:rotate(11deg) scaleY(.96); }
-  35%,65% { transform:rotate(5deg) scale(1.06,1); }
-  78% { transform:none; }
-}
-@keyframes gem-bull-sidestep {
-  34% { transform:translateX(14%) rotate(7deg); }
-  54% { transform:translateX(-15%) rotate(-8deg); }
-  77% { transform:none; }
-}
-@keyframes gem-bull-rear {
-  34%,53% { transform:rotate(-33deg) translateY(-12%); }
-  67% { transform:scaleY(.92); }
-  77% { transform:none; }
-}
-@keyframes gem-bull-parade {
+@keyframes gem-monkey-visit {
   0%,100% { opacity:0; }
-  0% { transform:translateX(22%); }
-  18%,79% { opacity:1; }
-  28% { transform:translate(-8vw,-5%); }
-  44% { transform:translate(-16vw,0); }
-  60% { transform:translate(-23vw,-5%); }
-  80%,100% { transform:translate(-33vw,0); }
+  14%,83% { opacity:1; }
 }
-@keyframes gem-bull-feint {
-  32% { transform:translateX(9%) rotate(9deg); }
-  44% { transform:translateX(-9%) rotate(15deg); }
-  58% { transform:translateX(20%) rotate(-7deg); }
-  78% { transform:none; }
+@keyframes gem-monkey-perch {
+  0% { transform:translateY(-35px) rotateX(28deg); }
+  26% { transform:scaleY(.92); }
+  50%,85% { transform:none; }
 }
-@keyframes gem-bull-bow {
-  35%,58% { transform:rotate(18deg) scaleY(.9); }
-  75% { transform:none; }
+@keyframes gem-monkey-swing {
+  0% { transform:translate(-68vw,-35vh) rotate(55deg) rotateY(-30deg); }
+  47% { transform:translate(-34vw,-6vh) rotate(-6deg); }
+  87%,100% { transform:translate(10px,-29vh) rotate(-48deg) rotateY(38deg); }
 }
-@keyframes gem-bull-recoil {
-  34% { transform:translateX(8%) rotate(8deg); }
-  49% { transform:translateX(-19%) translateY(-8%) rotate(-13deg); }
-  62% { transform:translateX(-16%) scaleY(.92); }
-  78% { transform:none; }
+@keyframes gem-monkey-rock {
+  24%,58% { transform:rotate(-11deg) rotateY(-24deg); }
+  40%,71% { transform:rotate(11deg) rotateY(16deg); }
+}
+@keyframes gem-monkey-hop {
+  30% { transform:translate(-35px,-48px) rotate(-12deg); }
+  47% { transform:translateX(-66px) scaleY(.89); }
+  64% { transform:translate(-96px,-34px) rotate(12deg); }
+  83% { transform:translateX(-118px); }
+}
+@keyframes gem-monkey-peek {
+  0%,20% { transform:translateX(115%); }
+  42%,71% { transform:translateX(22%) rotate(-25deg) rotateY(-27deg); }
+  100% { transform:translateX(115%); }
+}
+@keyframes gem-monkey-backflip {
+  17% { transform:scaleY(.85); }
+  47% { transform:translateY(-64px) rotateX(-185deg); }
+  75%,100% { transform:rotateX(-360deg); }
+}
+@keyframes gem-monkey-cartwheel {
+  13% { transform:none; }
+  48% { transform:translate(-64px,-29px) rotate(-180deg); }
+  80%,100% { transform:translateX(-128px) rotate(-360deg); }
+}
+@keyframes gem-monkey-slide {
+  0% { transform:translateX(-45vw) rotateY(25deg); }
+  61% { transform:translateX(-12px) rotate(-15deg) scaleY(.86); }
+  86% { transform:none; }
+}
+@keyframes gem-monkey-bounce {
+  25%,63% { transform:translateY(-37px) scaleY(1.08); }
+  44%,81% { transform:scale(1.05,.89); }
+}
+@keyframes gem-monkey-nod {
+  28%,60% { transform:rotateX(29deg); }
+  44%,78% { transform:rotateX(-9deg); }
+}
+@keyframes gem-monkey-stretch {
+  35%,57% { transform:scale(.91,1.23) rotateY(16deg); }
+  75% { transform:scale(1.08,.94); }
+}
+@keyframes gem-monkey-twirl {
+  15% { transform:none; }
+  48% { transform:translateY(-20px) rotateY(180deg); }
+  78%,100% { transform:rotateY(360deg); }
+}
+@keyframes gem-monkey-tiptoe {
+  0% { transform:translateX(-84px); }
+  25% { transform:translate(-62px,-9px) rotate(-6deg); }
+  45% { transform:translateX(-43px); }
+  65% { transform:translate(-21px,-9px) rotate(6deg); }
+  84% { transform:none; }
+}
+@keyframes gem-monkey-pose {
+  25% { transform:rotate(-12deg) translateY(-9px); }
+  42%,67% { transform:rotateX(-14deg) rotateY(-17deg) scale(1.09); }
+  85% { transform:none; }
+}
+@keyframes gem-monkey-nap {
+  36%,70% { transform:rotate(26deg) scale(.95,.87); }
+  51% { transform:rotate(26deg) scale(.97,.90); }
+  83% { transform:rotate(-6deg); }
+}
+
+.robot-monkey { display:block; position:relative; width:100%; height:100%; }
+.roaming-mascot .monkey-layer { position:absolute; inset:0; }
+.monkey-arm-left { transform-origin:29% 57%; --joint-angle:19deg; }
+.monkey-arm-right { transform-origin:65% 57%; --joint-angle:-19deg; }
+.monkey-leg-left { transform-origin:28% 77%; --joint-angle:-13deg; }
+.monkey-leg-right { transform-origin:68% 77%; --joint-angle:13deg; }
+.roaming-mascot:not([data-move="perch"])[data-lane="1"] { bottom:26vh; }
+.roaming-mascot:not([data-move="perch"])[data-lane="2"] { bottom:46vh; }
+.roaming-mascot:not([data-move="perch"])[data-lane="3"] { bottom:63vh; }
+@media (prefers-reduced-motion:no-preference) {
+  .roaming-mascot.is-playing .monkey-layer:not(.monkey-body) { animation:gem-monkey-joint .64s ease-in-out infinite alternate; }
+  .roaming-mascot.is-playing :is(.monkey-arm-right,.monkey-leg-left) { animation-delay:-.46s; }
+  .roaming-mascot[data-move="perch"] :is(.monkey-arm-left,.monkey-arm-right) { --joint-angle:27deg; }
+  .roaming-mascot[data-move="perch"] .monkey-arm-right { --joint-angle:-27deg; }
+  .roaming-mascot[data-move="nap"] .monkey-layer:not(.monkey-body) { animation-duration:1.8s; --joint-angle:3deg; }
+}
+@keyframes gem-monkey-joint {
+  from { transform:rotate(calc(-.28 * var(--joint-angle))); }
+  to { transform:rotate(var(--joint-angle)); }
+}
+
+.monkey-cta { position:relative; padding-inline-end:calc(2.35em + 12px); }
+.cta-monkey {
+  position:absolute;
+  inset-inline-end:7px;
+  top:50%;
+  width:1.45em;
+  height:1.45em;
+  object-fit:contain;
+  pointer-events:none;
+  transform:translateY(-50%);
+}
+@media (prefers-reduced-motion:no-preference) {
+  .cta-monkey { transition:transform .22s ease; }
+  .monkey-cta:is(:hover,:focus-visible) .cta-monkey { transform:translateY(-62%) rotate(-12deg) scale(1.09); }
 }
