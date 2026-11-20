@@ -1,21 +1,30 @@
 .client-showcase { padding-block:clamp(42px,6vw,76px); }
-.client-showcase-head { display:flex; justify-content:space-between; gap:16px; align-items:center; margin-bottom:24px; }
-.client-showcase h2 { margin:0; }
-.client-showcase-control { white-space:nowrap; }
-.client-logo-window { overflow:hidden; padding:14px 0; border-block:1px solid var(--line); }
-.client-logo-track { display:flex; width:max-content; animation:gem-client-slide 24s linear infinite; }
-.client-logo-window.is-reversed .client-logo-track { animation-direction:reverse; }
-.client-logo-group { display:flex; gap:12px; list-style:none; margin:0; padding:0 12px 0 0; }
-.client-logo { width:clamp(108px,12vw,154px); height:84px; flex:none; display:grid; place-items:center; border-radius:14px; background:#fff; box-shadow:inset 0 1px #fff,0 4px 14px #07163a36; }
-.client-logo img { display:block; width:75%; height:59%; object-fit:contain; transition:transform .24s ease; }
-.client-logo:hover img { transform:scale(1.4); }
-.client-logo-window:hover .client-logo-track,.client-showcase.is-paused .client-logo-track { animation-play-state:paused; }
-@keyframes gem-client-slide { to { transform:translateX(-50%); } }
-@media(prefers-reduced-motion:reduce) {
-  .client-logo-track,.client-logo img { animation:none; transition:none; }
-  .client-logo:hover img { transform:none; }
-  .client-logo-window { overflow-x:auto; }
-  .client-logo-group[aria-hidden] { display:none; }
-  .client-showcase-control { display:none; }
+.client-showcase h2 { margin:0 0 24px; }
+.client-logo-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(min(138px,100%),1fr));
+  gap:14px; margin:0; padding:0; list-style:none;
 }
-@media(max-width:480px) { .client-showcase-head { align-items:flex-start; flex-direction:column; } }
+.client-logo {
+  position:relative; display:grid; place-items:center; min-width:0; height:104px;
+  border:1px solid #ebf5ffbf; border-radius:15px;
+  background:linear-gradient(145deg,#fff 12%,#e8f2ff 100%);
+  box-shadow:inset 0 1px #fff,0 7px 20px #06143764;
+}
+.client-logo img { display:block; width:68%; height:61%; object-fit:contain; }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .client-logo { transition:transform .28s ease,box-shadow .28s ease; }
+  .client-logo img { transition:transform .26s ease; }
+  .client-logo:hover {
+    z-index:1; transform:perspective(600px) translateZ(12px) rotateX(var(--logo-x,0deg)) rotateY(var(--logo-y,0deg));
+    box-shadow:inset 0 1px #fff,0 16px 30px #061437a0,0 0 18px #8bbcff66;
+  }
+  .client-logo:hover img { transform:scale(1.4); }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .client-logo.is-revealed { animation:gem-logo-reveal .48s ease-out both; }
+}
+@keyframes gem-logo-reveal { from { opacity:0; translate:0 10px; } }
+@media(max-width:480px) {
+  .client-logo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .client-logo { height:85px; }
+}
