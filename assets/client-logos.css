@@ -1,0 +1,21 @@
+.client-showcase { padding-block:clamp(42px,6vw,76px); }
+.client-showcase-head { display:flex; justify-content:space-between; gap:16px; align-items:center; margin-bottom:24px; }
+.client-showcase h2 { margin:0; }
+.client-showcase-control { white-space:nowrap; }
+.client-logo-window { overflow:hidden; padding:14px 0; border-block:1px solid var(--line); }
+.client-logo-track { display:flex; width:max-content; animation:gem-client-slide 24s linear infinite; }
+.client-logo-window.is-reversed .client-logo-track { animation-direction:reverse; }
+.client-logo-group { display:flex; gap:12px; list-style:none; margin:0; padding:0 12px 0 0; }
+.client-logo { width:clamp(108px,12vw,154px); height:84px; flex:none; display:grid; place-items:center; border-radius:14px; background:#fff; box-shadow:inset 0 1px #fff,0 4px 14px #07163a36; }
+.client-logo img { display:block; width:75%; height:59%; object-fit:contain; transition:transform .24s ease; }
+.client-logo:hover img { transform:scale(1.4); }
+.client-logo-window:hover .client-logo-track,.client-showcase.is-paused .client-logo-track { animation-play-state:paused; }
+@keyframes gem-client-slide { to { transform:translateX(-50%); } }
+@media(prefers-reduced-motion:reduce) {
+  .client-logo-track,.client-logo img { animation:none; transition:none; }
+  .client-logo:hover img { transform:none; }
+  .client-logo-window { overflow-x:auto; }
+  .client-logo-group[aria-hidden] { display:none; }
+  .client-showcase-control { display:none; }
+}
+@media(max-width:480px) { .client-showcase-head { align-items:flex-start; flex-direction:column; } }
