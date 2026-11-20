@@ -81,7 +81,8 @@
 }
 .orbit-node-one { top: 30%; right: 12%; transform: translateZ(40px); }
 .orbit-node-two { left: 15%; bottom: 23%; transform: translateZ(51px); }
-.orbit-node-three { right: 21%; bottom: 16%; transform: translateZ(10px); }
+.orbit-node-three { right: 21%; bottom: 16%; transform: translateZ(45px); }
+.orbit-node-four { left: 25%; top: 24%; transform: translateZ(52px); }
 .orbit-core {
   display: grid;
   place-items: center;
