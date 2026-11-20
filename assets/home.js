@@ -73,18 +73,3 @@ if (tabList) {
   showAudience(0);
   tabList.hidden = false;
 }
-
-if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  document.querySelectorAll('.nav-glass, .footer-glass').forEach(surface => {
-    surface.addEventListener('pointermove', event => {
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const bounds = surface.getBoundingClientRect();
-      surface.style.setProperty('--light-x', `${(event.clientX - bounds.left) / bounds.width * 100}%`);
-      surface.style.setProperty('--light-y', `${(event.clientY - bounds.top) / bounds.height * 100}%`);
-    });
-    surface.addEventListener('pointerleave', () => {
-      surface.style.removeProperty('--light-x');
-      surface.style.removeProperty('--light-y');
-    });
-  });
-}
