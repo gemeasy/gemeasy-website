@@ -3,6 +3,12 @@
   if(!grid)return;
   const stamp=document.querySelector("#news-updated");
   const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const excerpt=value=>{
+    const text=String(value||"Open the original report for complete details.").replace(/\s+/g," ").trim();
+    if(text.length<=170)return text;
+    const end=text.lastIndexOf(" ",167);
+    return text.slice(0,end>115?end:167).trimEnd()+"…";
+  };
   const safeUrl=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)?u.href:"#"}catch{return"#"}};
   const initials=s=>String(s||"News").split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();
   const date=v=>{const d=new Date(v);return Number.isNaN(d.getTime())?"Recent":d.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})};
@@ -25,7 +31,7 @@
           '<div class="news-card-body">'+
             '<div class="news-card-top"><div class="news-source"><span class="news-source-mark">'+esc(initials(a.source))+'</span>'+source+'</div><time class="news-date">'+esc(date(a.publishedAt))+'</time></div>'+
             '<h3>'+esc(a.title)+'</h3>'+
-            '<p>'+esc(a.description||"Open the original report for complete details.")+'</p>'+
+            '<p>'+esc(excerpt(a.description))+'</p>'+
             '<a class="news-read-link" href="'+safeUrl(a.url)+'" target="_blank" rel="noopener noreferrer">Read full story <span>↗</span></a>'+
           '</div>'+
         '</article>';
@@ -38,7 +44,7 @@
       if(stamp&&data.updatedAt)stamp.innerHTML="<i></i> Updated "+esc(date(data.updatedAt));
     })
     .catch(()=>{
-      grid.innerHTML='<div class="news-state"><strong>Industry news feed is being connected.</strong>GemEasy’s original procurement guides remain available below.</div>';
+      grid.innerHTML='<div class="news-state"><strong>Industry news feed is being connected.</strong>GemEasy’s procurement guides are still available on this page.</div>';
       if(stamp)stamp.style.display="none";
     });
 })();

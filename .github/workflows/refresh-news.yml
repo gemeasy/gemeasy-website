@@ -47,7 +47,8 @@ jobs:
                 description: item.description || '',
                 url: item.link || '',
                 source: item.source_name || item.source_id || 'News source',
-                publishedAt: item.pubDate || ''
+                publishedAt: item.pubDate || '',
+                image: /^https:\/\//i.test(item.image_url || '') ? item.image_url : ''
               })).filter(item => item.title && item.url);
             fs.writeFileSync('assets/news-feed.json', JSON.stringify({updatedAt:new Date().toISOString(),articles}, null, 2) + '\n');
           }).catch(error => { console.error(error); process.exit(1); });

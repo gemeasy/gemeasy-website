@@ -36,41 +36,43 @@ document.documentElement.classList.add('menu-ready');
 updateMenu();
 
 const tabList = document.querySelector('.audience-tabs');
-const tabs = [...tabList.querySelectorAll('button')];
-const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+if (tabList) {
+  const tabs = [...tabList.querySelectorAll('button')];
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
 
-function showAudience(index) {
-  tabs.forEach((tab, position) => {
-    const selected = index === position;
-    tab.setAttribute('aria-selected', String(selected));
-    tab.tabIndex = selected ? 0 : -1;
-    panels[position].hidden = !selected;
+  function showAudience(index) {
+    tabs.forEach((tab, position) => {
+      const selected = index === position;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      panels[position].hidden = !selected;
+    });
+  }
+
+  tabList.setAttribute('role', 'tablist');
+  tabs.forEach((tab, index) => {
+    tab.setAttribute('role', 'tab');
+    panels[index].setAttribute('role', 'tabpanel');
+    panels[index].setAttribute('aria-labelledby', tab.id);
+    panels[index].tabIndex = 0;
+    tab.addEventListener('click', () => showAudience(index));
+    tab.addEventListener('keydown', event => {
+      let next;
+      switch (event.key) {
+        case 'ArrowLeft': next = (index + tabs.length - 1) % tabs.length; break;
+        case 'ArrowRight': next = (index + 1) % tabs.length; break;
+        case 'Home': next = 0; break;
+        case 'End': next = tabs.length - 1; break;
+        default: return;
+      }
+      event.preventDefault();
+      showAudience(next);
+      tabs[next].focus();
+    });
   });
+  showAudience(0);
+  tabList.hidden = false;
 }
-
-tabList.setAttribute('role', 'tablist');
-tabs.forEach((tab, index) => {
-  tab.setAttribute('role', 'tab');
-  panels[index].setAttribute('role', 'tabpanel');
-  panels[index].setAttribute('aria-labelledby', tab.id);
-  panels[index].tabIndex = 0;
-  tab.addEventListener('click', () => showAudience(index));
-  tab.addEventListener('keydown', event => {
-    let next;
-    switch (event.key) {
-      case 'ArrowLeft': next = (index + tabs.length - 1) % tabs.length; break;
-      case 'ArrowRight': next = (index + 1) % tabs.length; break;
-      case 'Home': next = 0; break;
-      case 'End': next = tabs.length - 1; break;
-      default: return;
-    }
-    event.preventDefault();
-    showAudience(next);
-    tabs[next].focus();
-  });
-});
-showAudience(0);
-tabList.hidden = false;
 
 if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.querySelectorAll('.nav-glass, .footer-glass').forEach(surface => {
