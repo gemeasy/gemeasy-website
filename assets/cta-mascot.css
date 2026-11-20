@@ -1,0 +1,89 @@
+.mascot-anchor { position:relative; isolation:isolate; }
+.cta-mascot {
+  position:absolute; z-index:2; top:-21px; right:-8px; width:36px; height:32px;
+  object-fit:contain; pointer-events:none; transform-origin:70% 85%;
+  filter:drop-shadow(0 3px 5px #091d5280);
+}
+:is(.button-nav,.nav-cta) .cta-mascot { top:-15px; right:-6px; width:29px; height:27px; }
+.roaming-mascot {
+  position:fixed; z-index:9; bottom:max(18px,env(safe-area-inset-bottom)); right:max(15px,env(safe-area-inset-right));
+  width:clamp(54px,9vw,90px); aspect-ratio:1;
+  pointer-events:none; opacity:0; filter:drop-shadow(0 7px 10px #061d536b);
+}
+.roaming-mascot[data-corner="left"] { right:auto; left:max(15px,env(safe-area-inset-left)); }
+.roaming-mascot img { display:block; width:100%; height:100%; object-fit:contain; }
+.roaming-mascot[data-corner="high"] { bottom:24vh; }
+.mascot-motion-toggle {
+  background:none; border:0; padding:5px 0; color:inherit; cursor:pointer; font:inherit;
+  text-decoration:underline; text-underline-offset:3px;
+}
+@media(prefers-reduced-motion:no-preference) {
+  .cta-mascot { transition:transform .27s cubic-bezier(.2,.75,.3,1.25); }
+  .mascot-anchor:is(:hover,:focus-within) .cta-mascot { transform:translate(-5px,-8px) rotate(-13deg) scale(1.14); }
+  .roaming-mascot.is-playing { animation:var(--mascot-move) 3.5s ease-in-out both; }
+  .roaming-mascot[data-move="run"] { --mascot-move:gem-run; }
+  .roaming-mascot[data-move="burst"] { --mascot-move:gem-burst; }
+  .roaming-mascot[data-move="hop"] { --mascot-move:gem-hop; }
+  .roaming-mascot[data-move="spin"] { --mascot-move:gem-spin; }
+  .roaming-mascot[data-move="peek"] { --mascot-move:gem-peek; }
+  .roaming-mascot[data-move="float"] { --mascot-move:gem-float; }
+  .roaming-mascot.is-playing[data-move="burst"]::after {
+    content:""; position:absolute; inset:5%; border-radius:50%; pointer-events:none;
+    box-shadow:-18px -12px 0 -23px #fff,22px -19px 0 -23px #86d9ff,
+      -20px 18px 0 -23px #b1dcff,20px 17px 0 -23px #fff;
+    border:2px dotted #b8e8ff;
+    animation:gem-sparkle 1s 1.2s ease-out both;
+  }
+}
+@keyframes gem-run {
+  0% { opacity:0; transform:translateX(105%) rotate(-12deg); }
+  12%,86% { opacity:1; }
+  22% { transform:translate(-11vw,-10px) rotate(-13deg); }
+  36% { transform:translate(-23vw,0) rotate(5deg); }
+  50% { transform:translate(-35vw,-12px) rotate(-12deg); }
+  66% { transform:translate(-48vw,0) rotate(6deg); }
+  81% { transform:translate(-60vw,-11px) rotate(-12deg); }
+  100% { opacity:0; transform:translateX(-76vw); }
+}
+@keyframes gem-burst {
+  0%,100% { opacity:0; transform:scale(.58); }
+  18%,78% { opacity:1; }
+  36% { transform:scale(.9) rotate(-7deg); }
+  48% { transform:scale(1.27) rotate(6deg); }
+  68% { transform:scale(1); }
+}
+@keyframes gem-sparkle {
+  0%,100% { opacity:0; transform:scale(.5); }
+  24% { opacity:1; }
+  100% { transform:scale(2.1) rotate(48deg); }
+}
+@keyframes gem-hop {
+  0%,100% { opacity:0; transform:translateY(42px); }
+  16%,84% { opacity:1; }
+  28% { transform:translateY(-40px) rotate(-9deg); }
+  44% { transform:translateY(0) scale(1.1,.9); }
+  59% { transform:translateY(-30px) rotate(9deg); }
+  76% { transform:translateY(0); }
+}
+@keyframes gem-spin {
+  0%,100% { opacity:0; transform:translateY(24px); }
+  16%,83% { opacity:1; }
+  24% { transform:perspective(380px) rotateY(0); }
+  69% { transform:perspective(380px) rotateY(360deg); }
+}
+@keyframes gem-peek {
+  0%,100% { opacity:0; transform:translateX(-110%); }
+  14%,81% { opacity:1; }
+  22% { transform:translateX(-35%) rotate(13deg); }
+  35% { transform:translateX(0) rotate(-8deg); }
+  48% { transform:rotate(10deg); }
+  64%,79% { transform:rotate(-6deg); }
+}
+@keyframes gem-float {
+  0%,100% { opacity:0; transform:translateY(42px) scale(.8); }
+  18%,80% { opacity:1; }
+  30% { transform:translate(-12px,-30px) rotate(-9deg); }
+  58% { transform:translate(9px,-60px) rotate(9deg); }
+  78% { transform:translate(-4px,-30px); }
+}
+@media(prefers-reduced-motion:reduce) { .roaming-mascot,.mascot-motion-toggle { display:none; } }
