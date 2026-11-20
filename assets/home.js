@@ -7,7 +7,6 @@ if (hindi) {
   document.querySelectorAll('[data-hi-label]').forEach(element => {
     element.setAttribute('aria-label', element.dataset.hiLabel);
   });
-  document.querySelector('#languageToggle').setAttribute('aria-label', 'अंग्रेज़ी में बदलें');
 }
 
 const menuButton = document.querySelector('.menu-button');
