@@ -17,110 +17,177 @@
   background:none; border:0; padding:5px 0; color:inherit; cursor:pointer; font:inherit;
   text-decoration:underline; text-underline-offset:3px;
 }
+.sapphire-bull { position:relative; display:block; width:100%; height:100%; }
+.roaming-mascot .sapphire-bull img { position:absolute; inset:0; }
+.roaming-mascot .natural-bull { opacity:0; }
+.roaming-mascot .ruby-mascot {
+  position:absolute; top:0; right:86%; width:100%; height:100%;
+}
+.roaming-mascot[data-corner="left"] .ruby-mascot { right:auto; left:86%; }
+.roaming-mascot :is(.sapphire-bull,.ruby-mascot) { transform-origin:50% 88%; }
+.roaming-mascot[data-corner="right"] .sapphire-bull,
+.roaming-mascot[data-corner="left"] .ruby-mascot { scale:-1 1; }
+.roaming-mascot[data-move="charge"] .ruby-mascot { scale:-1 1; }
+
 @media(prefers-reduced-motion:no-preference) {
-  .cta-mascot { transition:transform .27s cubic-bezier(.2,.75,.3,1.25); }
-  .mascot-anchor:is(:hover,:focus-within) .cta-mascot { transform:translate(-5px,-8px) rotate(-13deg) scale(1.14); }
-  .roaming-mascot.is-playing { animation:var(--mascot-move) 3.5s ease-in-out both; }
-  .roaming-mascot[data-move="run"] { --mascot-move:gem-run; }
-  .roaming-mascot[data-move="burst"] { --mascot-move:gem-burst; }
-  .roaming-mascot[data-move="hop"] { --mascot-move:gem-hop; }
-  .roaming-mascot[data-move="spin"] { --mascot-move:gem-spin; }
-  .roaming-mascot[data-move="peek"] { --mascot-move:gem-peek; }
-  .roaming-mascot[data-move="float"] { --mascot-move:gem-float; }
-  .roaming-mascot.is-playing[data-move="burst"]::after {
-    content:""; position:absolute; inset:5%; border-radius:50%; pointer-events:none;
-    box-shadow:-18px -12px 0 -23px #fff,22px -19px 0 -23px #86d9ff,
-      -20px 18px 0 -23px #b1dcff,20px 17px 0 -23px #fff;
-    border:2px dotted #b8e8ff;
-    animation:gem-sparkle 1s 1.2s ease-out both;
+  .cta-mascot { transition:transform .27s ease; }
+  .mascot-anchor:is(:hover,:focus-within) .cta-mascot { transform:translate(-4px,-4px) rotate(-11deg); }
+  .roaming-mascot.is-playing { animation:gem-bull-visit 3.5s ease-in-out both; }
+  .roaming-mascot.is-playing[data-move="charge"] { animation-name:gem-bull-charge; }
+  .roaming-mascot.is-playing[data-move="transform"] .natural-bull { animation:gem-bull-natural 3.5s linear both; }
+  .roaming-mascot.is-playing[data-move="transform"] .robot-bull { animation:gem-bull-armor 3.5s linear both; }
+  .roaming-mascot.is-playing[data-move="transform"] .sapphire-bull::after {
+    content:""; position:absolute; inset-inline:3%; top:12%; height:2px;
+    background:#b5f5ff; box-shadow:0 0 10px 3px #49c5ff;
+    animation:gem-bull-scan 3.5s linear both;
   }
-}
-@keyframes gem-run {
-  0% { opacity:0; transform:translateX(105%) rotate(-12deg); }
-  12%,86% { opacity:1; }
-  22% { transform:translate(-11vw,-10px) rotate(-13deg); }
-  36% { transform:translate(-23vw,0) rotate(5deg); }
-  50% { transform:translate(-35vw,-12px) rotate(-12deg); }
-  66% { transform:translate(-48vw,0) rotate(6deg); }
-  81% { transform:translate(-60vw,-11px) rotate(-12deg); }
-  100% { opacity:0; transform:translateX(-76vw); }
-}
-@keyframes gem-burst {
-  0%,100% { opacity:0; transform:scale(.58); }
-  18%,78% { opacity:1; }
-  36% { transform:scale(.9) rotate(-7deg); }
-  48% { transform:scale(1.27) rotate(6deg); }
-  68% { transform:scale(1); }
-}
-@keyframes gem-sparkle {
-  0%,100% { opacity:0; transform:scale(.5); }
-  24% { opacity:1; }
-  100% { transform:scale(2.1) rotate(48deg); }
-}
-@keyframes gem-hop {
-  0%,100% { opacity:0; transform:translateY(42px); }
-  16%,84% { opacity:1; }
-  28% { transform:translateY(-40px) rotate(-9deg); }
-  44% { transform:translateY(0) scale(1.1,.9); }
-  59% { transform:translateY(-30px) rotate(9deg); }
-  76% { transform:translateY(0); }
-}
-@keyframes gem-spin {
-  0%,100% { opacity:0; transform:translateY(24px); }
-  16%,83% { opacity:1; }
-  24% { transform:perspective(380px) rotateY(0); }
-  69% { transform:perspective(380px) rotateY(360deg); }
-}
-@keyframes gem-peek {
-  0%,100% { opacity:0; transform:translateX(-110%); }
-  14%,81% { opacity:1; }
-  22% { transform:translateX(-35%) rotate(13deg); }
-  35% { transform:translateX(0) rotate(-8deg); }
-  48% { transform:rotate(10deg); }
-  64%,79% { transform:rotate(-6deg); }
-}
-@keyframes gem-float {
-  0%,100% { opacity:0; transform:translateY(42px) scale(.8); }
-  18%,80% { opacity:1; }
-  30% { transform:translate(-12px,-30px) rotate(-9deg); }
-  58% { transform:translate(9px,-60px) rotate(9deg); }
-  78% { transform:translate(-4px,-30px); }
+  .roaming-mascot.is-playing[data-move="scrape"] .sapphire-bull { animation:gem-bull-scrape 3.5s ease both; }
+  .roaming-mascot.is-playing[data-move="toss"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-toss 3.5s ease both; }
+  .roaming-mascot.is-playing[data-move="charge"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-gallop .48s ease-in-out infinite; }
+  .roaming-mascot.is-playing[data-move="face-off"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-face-off 3.5s ease both; }
+  .roaming-mascot.is-playing[data-move="buck"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-buck 3.5s ease both; }
+  .roaming-mascot.is-playing:is([data-move="toss"],[data-move="buck"]) .ruby-mascot { animation-delay:.22s; }
 }
 @media(prefers-reduced-motion:reduce) { .roaming-mascot,.mascot-motion-toggle { display:none; } }
 
-.roaming-mascot .ruby-mascot {
-  position:absolute;
-  top:5%;
-  right:68%;
-  width:87%;
-  height:87%;
-  transform-origin:center bottom;
+@keyframes gem-bull-visit {
+  0%,100% { opacity:0; transform:translateY(16px); }
+  12%,88% { opacity:1; transform:none; }
 }
-.roaming-mascot[data-corner="left"] .ruby-mascot { right:auto; left:68%; }
+@keyframes gem-bull-natural {
+  0%,28% { opacity:1; clip-path:inset(0); }
+  60%,100% { opacity:1; clip-path:inset(100% 0 0); }
+}
+@keyframes gem-bull-armor {
+  0%,28% { clip-path:inset(0 0 100%); }
+  60%,100% { clip-path:inset(0); }
+  63% { filter:drop-shadow(0 0 6px #75dbff); }
+  80% { filter:none; }
+}
+@keyframes gem-bull-scan {
+  0%,28% { opacity:0; top:0; }
+  32% { opacity:1; }
+  58% { opacity:1; }
+  60%,100% { opacity:0; top:100%; }
+}
+@keyframes gem-bull-scrape {
+  26%,43%,58% { transform:translateX(5%) rotate(9deg) scaleY(.92); }
+  34%,50%,65% { transform:translateX(-5%) rotate(3deg); }
+  80% { transform:none; }
+}
+@keyframes gem-bull-toss {
+  30%,56% { transform:rotate(13deg) scaleY(.94); }
+  39%,65% { transform:rotate(-17deg) scaleY(1.05); }
+  78% { transform:none; }
+}
+@keyframes gem-bull-charge {
+  0% { opacity:0; transform:translateX(82%); }
+  16%,83% { opacity:1; }
+  100% { opacity:0; transform:translateX(calc(-58vw + 30px)); }
+}
+@keyframes gem-bull-gallop {
+  25% { transform:translateY(-11%) rotate(-8deg); }
+  65% { transform:rotate(6deg) scaleY(.91); }
+}
+@keyframes gem-bull-face-off {
+  32% { transform:rotate(9deg) scaleY(.94); }
+  45%,56% { transform:translateX(6%) rotate(12deg); }
+  64% { transform:translateX(-8%) rotate(-5deg); }
+  80% { transform:none; }
+}
+@keyframes gem-bull-buck {
+  29% { transform:rotate(12deg) scaleY(.9); }
+  40% { transform:translateY(-26%) rotate(-16deg); }
+  53% { transform:translateY(-9%) rotate(15deg); }
+  65% { transform:scaleY(.9); }
+  77% { transform:none; }
+}
+
+.roaming-mascot[data-corner="center"] {
+  right:50%;
+  margin-right:calc(-1 * clamp(54px,9vw,90px));
+}
+.roaming-mascot[data-move="clash"] .sapphire-bull { scale:-1 1; }
+.roaming-mascot[data-move="clash"] .ruby-mascot { right:100%; }
 @media(prefers-reduced-motion:no-preference) {
-  .roaming-mascot.is-playing .ruby-mascot { animation:gem-ruby-chase 3.5s ease-in-out both; }
-  .roaming-mascot.is-playing:is([data-move="burst"],[data-move="peek"]) .ruby-mascot {
-    animation-name:gem-ruby-greet-left;
+  .roaming-mascot.is-playing[data-move="clash"] .sapphire-bull { animation:gem-bull-clash-right 3.5s both; }
+  .roaming-mascot.is-playing[data-move="clash"] .ruby-mascot { animation:gem-bull-clash-left 3.5s both; }
+  .roaming-mascot.is-playing[data-move="clash"]::after {
+    content:""; position:absolute; inset:22% auto auto -2px; width:4px; height:4px;
+    border-radius:50%; background:#fff;
+    box-shadow:0 0 12px 4px #ffc571, -8px -7px 0 #ffd789, 6px -11px 0 #fff, 8px 6px 0 #ffc571;
+    animation:gem-bull-impact 3.5s both;
   }
-  .roaming-mascot.is-playing:is([data-move="hop"],[data-move="float"],[data-move="spin"]) .ruby-mascot {
-    animation-name:gem-ruby-greet-right;
-  }
+  .roaming-mascot.is-playing[data-move="stomp"] .sapphire-bull { animation:gem-bull-stomp 3.5s both; }
+  .roaming-mascot.is-playing[data-move="snort"] .sapphire-bull { animation:gem-bull-snort 3.5s both; }
+  .roaming-mascot.is-playing[data-move="sidestep"] .ruby-mascot { animation:gem-bull-sidestep 3.5s both; }
+  .roaming-mascot.is-playing[data-move="rear"] .sapphire-bull { animation:gem-bull-rear 3.5s both; }
+  .roaming-mascot.is-playing[data-move="parade"] { animation-name:gem-bull-parade; }
+  .roaming-mascot.is-playing[data-move="parade"] .ruby-mascot { scale:-1 1; }
+  .roaming-mascot.is-playing[data-move="feint"] .ruby-mascot { animation:gem-bull-feint 3.5s both; }
+  .roaming-mascot.is-playing[data-move="bow"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-bow 3.5s both; }
+  .roaming-mascot.is-playing[data-move="recoil"] :is(.sapphire-bull,.ruby-mascot) { animation:gem-bull-recoil 3.5s both; }
 }
-@keyframes gem-ruby-chase {
-  0%,100% { opacity:0; transform:translate(25px,12px) rotate(8deg); }
-  19%,83% { opacity:1; }
-  32%,68% { transform:translate(-10px,-7px) rotate(-12deg); }
-  48%,79% { transform:translate(3px,2px) rotate(9deg); }
+@keyframes gem-bull-clash-right {
+  0%,15% { transform:translateX(-48vw); }
+  48% { transform:translateX(-2%); }
+  54%,62% { transform:translateX(9%) rotate(7deg); }
+  70%,100% { transform:translateX(-35%) rotate(-5deg); }
 }
-@keyframes gem-ruby-greet-left {
-  0%,100% { opacity:0; transform:translate(22px,14px) rotate(12deg); }
-  20%,83% { opacity:1; }
-  42%,57% { transform:translate(-17%,-19%) rotate(-13deg); }
-  72% { transform:translate(8px,0) rotate(11deg); }
+@keyframes gem-bull-clash-left {
+  0%,15% { transform:translateX(-48vw); }
+  48% { transform:translateX(2%); }
+  54%,62% { transform:translateX(-9%) rotate(7deg); }
+  70%,100% { transform:translateX(-35%) rotate(-5deg); }
 }
-@keyframes gem-ruby-greet-right {
-  0%,100% { opacity:0; transform:translate(-17px,14px) rotate(-12deg); }
-  20%,83% { opacity:1; }
-  42%,57% { transform:translate(17%,-19%) rotate(13deg); }
-  72% { transform:translate(-8px,0) rotate(-11deg); }
+@keyframes gem-bull-impact {
+  0%,46%,65%,100% { opacity:0; transform:scale(.5); }
+  51% { opacity:1; transform:scale(1.5); }
+}
+@keyframes gem-bull-stomp {
+  33% { transform:translateY(-7%) rotate(-9deg); }
+  40% { transform:scaleY(.85); }
+  44%,54% { transform:translateX(3%); }
+  49% { transform:translateX(-3%); }
+  63% { transform:none; }
+}
+@keyframes gem-bull-snort {
+  28%,58% { transform:rotate(11deg) scaleY(.96); }
+  35%,65% { transform:rotate(5deg) scale(1.06,1); }
+  78% { transform:none; }
+}
+@keyframes gem-bull-sidestep {
+  34% { transform:translateX(14%) rotate(7deg); }
+  54% { transform:translateX(-15%) rotate(-8deg); }
+  77% { transform:none; }
+}
+@keyframes gem-bull-rear {
+  34%,53% { transform:rotate(-33deg) translateY(-12%); }
+  67% { transform:scaleY(.92); }
+  77% { transform:none; }
+}
+@keyframes gem-bull-parade {
+  0%,100% { opacity:0; }
+  0% { transform:translateX(22%); }
+  18%,79% { opacity:1; }
+  28% { transform:translate(-8vw,-5%); }
+  44% { transform:translate(-16vw,0); }
+  60% { transform:translate(-23vw,-5%); }
+  80%,100% { transform:translate(-33vw,0); }
+}
+@keyframes gem-bull-feint {
+  32% { transform:translateX(9%) rotate(9deg); }
+  44% { transform:translateX(-9%) rotate(15deg); }
+  58% { transform:translateX(20%) rotate(-7deg); }
+  78% { transform:none; }
+}
+@keyframes gem-bull-bow {
+  35%,58% { transform:rotate(18deg) scaleY(.9); }
+  75% { transform:none; }
+}
+@keyframes gem-bull-recoil {
+  34% { transform:translateX(8%) rotate(8deg); }
+  49% { transform:translateX(-19%) translateY(-8%) rotate(-13deg); }
+  62% { transform:translateX(-16%) scaleY(.92); }
+  78% { transform:none; }
 }

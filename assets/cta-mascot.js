@@ -20,7 +20,13 @@
   const rover = document.createElement('span');
   rover.className = 'roaming-mascot';
   rover.setAttribute('aria-hidden', 'true');
-  rover.append(mascot('roaming-mascot-image'), mascot('ruby-mascot', 'assets/gemeasy-ruby-mascot.webp'));
+  const blue = document.createElement('span');
+  blue.className = 'sapphire-bull';
+  blue.append(
+    mascot('natural-bull', 'assets/gemeasy-natural-bull.webp'),
+    mascot('robot-bull')
+  );
+  rover.append(blue, mascot('ruby-mascot', 'assets/gemeasy-ruby-mascot.webp'));
   document.body.append(rover);
   const toggle = document.createElement('button');
   toggle.type = 'button';
@@ -44,12 +50,21 @@
     if (event.target === rover && !event.pseudoElement) rover.classList.remove('is-playing');
   });
   const moves = [
-    ['run', 'right'],
-    ['burst', 'left'],
-    ['hop', 'right'],
-    ['spin', 'high'],
-    ['peek', 'left'],
-    ['float', 'high']
+    ['transform', 'right'],
+    ['scrape', 'left'],
+    ['toss', 'right'],
+    ['charge', 'right'],
+    ['face-off', 'left'],
+    ['buck', 'right'],
+    ['clash', 'center'],
+    ['stomp', 'left'],
+    ['snort', 'right'],
+    ['sidestep', 'left'],
+    ['rear', 'right'],
+    ['parade', 'right'],
+    ['feint', 'left'],
+    ['bow', 'right'],
+    ['recoil', 'left']
   ];
   let turn = 0;
   setInterval(() => {
